@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Body mass index-BMI</h1>
+        <div>
+            <label for="weight">Enter your weight:(kg)</label>
+            <input type="text" name="weight" id="weight">
+        </div>
+        <div>
+        <label for="height">Enter your height:(m)</label>
+        <input type="text" name="height" id="height">
+        </div>
+        <div>
+            <button onclick="doBmi(),check()">Check</button>
+        </div>
+        <p id="resultBMI"></p>
+        <p id="result"></p>
+        
+    </body>
+</html>
+<script>
+    let resultBMI;
+    function doBmi(){
+        let inWeight= parseFloat(document.getElementById("weight").value);
+        let inHeight= parseFloat(document.getElementById("height").value);
+      
+        resultBMI= inWeight / ( inHeight **2 )
+        document.getElementById("resultBMI").innerText= "Your BMI is:" + resultBMI
+    
+    }
+    function check(){
+        let message;
+        if (resultBMI < 18.5){
+            message= "Underweight";
+        }else if( resultBMI >= 18.5 && resultBMI < 25){
+            message= "Normal";
+        }else if( resultBMI >= 25 && resultBMI < 30){
+            message= "Overweight";
+        }else{
+            message= "Obese";
+        }
+        document.getElementById("result").innerText= "Your " + message
+    }   
+</script>
