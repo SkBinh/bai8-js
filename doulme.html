@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you love me</title>
+</head>
+<style>
+    #btNO{
+        position: absolute;
+    }
+    body{
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+    }
+</style>
+<body>
+    <h1>Do you love me?</h1>
+    <div>
+        <button type="button" onclick="clickYes()">Yes</button>   
+        <button id="btNO" onmouseover="mouseOver()">No</button>
+    </div>
+</body>
+</html>
+<script>
+    function clickYes(){
+        alert("You're right!!");
+    }
+    function mouseOver(){
+         const x = Math.round(Math.random() * window.innerWidth);
+         const y = Math.round(Math.random() * window.innerHeight);
+         document.getElementById("btNO").style.left = x + 'px';
+         document.getElementById("btNO").style.top = y + 'px';
+    }
+</script>
