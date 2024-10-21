@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Bài 1</h2>
+        <div>
+            <input type="number" id="CtoF" placeholder="Nhập độ C">
+            <button type="button" onclick="tinhBai1()">Tính</button>
+        </div>
+        <p id="result1"></p>
+    </div>
+
+    <div>
+        <h2>Bài 2</h2>
+        <div>
+            <input type="number" id="MtoFT" placeholder="Nhập mét">
+            <button type="button" onclick="tinhBai2()">Tính</button>
+        </div>
+        <p id="result2"></p>
+    </div>    
+    
+    <div>
+        <h2>Bài 3</h2>
+        <div>
+            <input type="number" id="canhVuong" placeholder="Nhập cạnh">
+            <button type="button" onclick="tinhBai3()">Tính</button>
+        </div>
+        <p id="result3"></p>
+    </div>
+
+    <div>
+        <h2>Bài 4</h2>
+        <div>
+            <input type="number" id="cDai" placeholder="chiều dài">
+            <input type="number" id="cRong" placeholder="chiều rộng">
+            <button type="button" onclick="tinhBai4()">Tính</button>
+        </div>
+        <p id="result4"></p>
+    </div>
+
+    <div>
+        <h2>Bài 5</h2>
+        <div>
+            <input type="number" id="canhA" placeholder="cạnh a">
+            <input type="number" id="canhB" placeholder="cạnh b">
+            <button type="button" onclick="tinhBai5()">Tính</button>
+        </div>
+        <p id="result5"></p>
+    </div>
+
+    <div>
+        <h2>Bài 6</h2>
+        <div>
+            <input type="number" id="soA6" placeholder="số a">
+            <input type="number" id="soB6" placeholder="số b">
+            <button type="button" onclick="tinhBai6()">Tính</button>
+        </div>
+        <p id="result6"></p>
+    </div>
+
+    <div>
+        <h2>Bài 7</h2>
+        <div>
+            <input type="number" id="soA7" placeholder="số a">
+            <input type="number" id="soB7" placeholder="số b">
+            <input type="number" id="soC7" placeholder="số C">
+            <button type="button" onclick="tinhBai7()">Tính</button>
+        </div>
+        <p id="result7"></p>
+    </div>
+
+    <div>
+        <h2>Bài 8</h2>
+        <div>
+            <input type="number" id="soTuoi" placeholder="Nhập số Tuổi">
+            <button type="button" onclick="tinhBai8()">Tính</button>
+        </div>
+        <p id="result8"></p>
+    </div>
+
+    <div>
+        <h2>Bài 9</h2>
+        <div>
+            <input type="number" id="soA9" placeholder="cạnh a">
+            <input type="number" id="soB9" placeholder="cạnh b">
+            <input type="number" id="soC9" placeholder="cạnh C">
+            <button type="button" onclick="tinhBai9()">Tính</button>
+        </div>
+        <p id="result9"></p>
+    </div>
+
+    <div>
+        <h2>Bài 10</h2>
+        <div>
+            <input type="number" id="soDien" placeholder="Nhập số Điện">
+            <button type="button" onclick="tinhBai10()">Tính</button>
+        </div>
+        <p id="result10"></p>
+    </div>
+
+    <div>
+        <h2>Bài 11</h2>
+        <div>
+            <input type="number" id="soTNCN" placeholder="Nhập số tiền">
+            <button type="button" onclick="tinhBai11()">Tính</button>
+        </div>
+        <p id="result11"></p>
+    </div>
+
+    <div>
+        <h2>Bài 12</h2>
+        <div>
+            <input type="number" id="soTien12" placeholder="Nhập số tiền">
+            <input type="number" id="soThang12" placeholder="Nhạp số tháng">
+            <input type="number" id="laisuat" placeholder="Nhập lãi suất">
+            <button type="button" onclick="tinhBai12()">Tính</button>
+        </div>
+        <p id="result12"></p>
+    </div>
+</body>
+</html>
+<script>
+    function tinhBai1(){
+        let doC= parseFloat(document.getElementById("CtoF").value);
+        let doF= doC * 9/5 + 32;
+
+        document.getElementById("result1").innerHTML= doF +" độ F";
+    }
+
+    function tinhBai2(){
+        let meter= parseFloat(document.getElementById("MtoFT").value);
+        let feet= meter * 3.2808;
+
+        document.getElementById("result2").innerHTML= feet +" feet";
+    }
+
+    function tinhBai3(){
+        let canhHV= parseFloat(document.getElementById("canhVuong").value);
+        let dientichHV= canhHV * canhHV;
+
+        document.getElementById("result3").innerHTML= "diện tích HV = " + dientichHV;
+    }
+
+    function tinhBai4(){
+        let chieudaiHCN= parseFloat(document.getElementById("cDai").value);
+        let chieurongHCN= parseFloat(document.getElementById("cRong").value);        
+        let dientichHCN= chieudaiHCN * chieurongHCN;
+        document.getElementById("result4").innerHTML= "diện tích HCN = " + dientichHCN;
+    }
+
+    function tinhBai5(){
+        let canhAtg= parseFloat(document.getElementById("canhA").value);
+        let canhBtg= parseFloat(document.getElementById("canhB").value);        
+        let dientichTGV= (canhAtg * canhBtg)/2;
+        document.getElementById("result5").innerHTML= "diện tích TGV = " + dientichTGV;
+    }
+
+    function tinhBai6(){
+        let soA6= parseFloat(document.getElementById("soA6").value);
+        let soB6= parseFloat(document.getElementById("soB6").value);        
+        let PTBac1;
+        if (soA6 == 0){
+            PTBac1= "PT vô nghiệm"
+        }else{
+            PTBac1= -soB6 / soA6
+        }
+
+        document.getElementById("result6").innerHTML= "X = " + PTBac1;
+    }
+
+    function tinhBai7(){
+        let soA7= parseFloat(document.getElementById("soA7").value);
+        let soB7= parseFloat(document.getElementById("soB7").value);
+        let soC7= parseFloat(document.getElementById("soC7").value);
+        let PTBac2;
+        let delta = soB7*soB7 - 4*soA7*soC7;
+//ax^2+bx+c=0
+        if(delta < 0){
+            PTBac2="PT vô nghiệm";
+        }else if(delta == 0){
+            PTBac2="PT nghiệm kép = " + (-soB7 / (2*soA7));
+        }else{
+            let x1= (-soB7 -Math.sqrt(delta)) / (2*soA7);
+            let x2= (-soB7 +Math.sqrt(delta)) / (2*soA7);
+            PTBac2= "x1 = " + x1 + "; x2= "+ x2;
+         }
+         document.getElementById("result7").innerHTML= PTBac2;
+    }
+
+    function tinhBai8(){
+        let soTuoi= parseInt(document.getElementById("soTuoi").value);
+        soTuoi = (soTuoi >0 && soTuoi < 120) ? "Tuổi của một người" : "Không phải tuổi của một người";
+        document.getElementById("result8").innerHTML= soTuoi;
+    }
+
+    function tinhBai9(){
+        let canhA9= parseFloat(document.getElementById("soA9").value);
+        let canhB9= parseFloat(document.getElementById("soB9").value);
+        let canhC9= parseFloat(document.getElementById("soC9").value);
+        let Ketqua;
+
+        if(canhA9 >0 && canhB9>0 && canhC9 >0 && (canhA9+canhB9 > canhC9) && (canhB9+canhC9 > canhA9) && (canhA9+canhC9 > canhB9) ){
+            Ketqua= canhA9 + " và " + canhB9 + " và " + canhC9 + " là cạnh của tam giác" 
+        }else{
+            Ketqua= canhA9 + " và " + canhB9 + " và " + canhC9 + " không là cạnh của tam giác"
+        }
+        document.getElementById("result9").innerHTML=Ketqua;
+    }
+    
+    function tinhBai10(){
+        let soDien= parseFloat(document.getElementById("soDien").value);
+        let tienDien= (soDien >0 && soDien <= 50) ? soDien *1600 : (soDien <=100) ? soDien *1700 : soDien * 1800;
+        document.getElementById("result10").innerHTML="tiền Điện = "+ tienDien;
+    }
+
+    function tinhBai11(){
+        let soTien11= parseInt(document.getElementById("soTNCN").value);
+        let Ketqua11= (soTien11 <= 5000000) ? soTien11*0.05 : (soTien11 <= 10000000) ? soTien11 *0.08 : soTien11 *0.1;
+        document.getElementById("result11").innerHTML="Thuế thu nhập cá nhân = " + Ketqua11;
+    }
+    
+    function tinhBai12(){
+        let tien12= parseInt(document.getElementById("soTien12").value);
+        let thang12= parseFloat(document.getElementById("soThang12").value);
+        let laisuat= parseFloat(document.getElementById("laisuat").value) /100;
+        let kq12= tien12 * Math.pow((1+ laisuat), thang12);
+
+        document.getElementById("result12").innerHTML="Tổng số tiền sau " + thang12 + " tháng: " + kq12;
+    }
+</script>
