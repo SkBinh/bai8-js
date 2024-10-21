@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị số nguyên tố</title>
+</head>
+<body>
+    <script>
+        // Hàm kiểm tra một số có phải là số nguyên tố không
+        function isPrime(num) {
+            if (num < 2) {
+                return false;
+            }
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Hàm in ra n số nguyên tố đầu tiên
+        function checkNT() {
+            let number = parseInt(prompt("Nhập số lượng số nguyên tố cần hiển thị: ")); // Nhập n từ người dùng
+            let countSnt = 0; // Đếm số lượng số nguyên tố đã tìm được
+            let i = 2; // Bắt đầu từ số 2
+
+            while (countSnt < number) { // Chạy cho đến khi tìm đủ số nguyên tố
+                if (isPrime(i)) {
+                    document.write(i + "<br>"); // In ra số nguyên tố
+                    countSnt++; // Tăng số lượng số nguyên tố đã tìm được
+                }
+                i++; // Kiểm tra số tiếp theo
+            }
+        }
+
+        // Gọi hàm để chạy chương trình
+        checkNT();
+    </script>
+</body>
+</html>
