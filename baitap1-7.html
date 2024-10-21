@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Bài 1</h2>
+        <div>
+            <input type="number" id="soA" placeholder="Nhập số A">
+            <input type="number" id="soB" placeholder="Nhập số B">
+            <button type="button" onclick="tinhBai1()">Tính</button>
+        </div>
+        <p id="result1">Chia hết không</p>
+    </div>
+    
+    <div>
+        <h2>Bài 2</h2>
+        <div>
+            <input type="number" id="tuoi" placeholder="Nhập số tuổi">
+            <button type="button" onclick="tinhBai2()">Tính</button>
+        </div>
+        <p id="result2">Đủ điều kiện vào lớp 10 không</p>
+    </div>
+
+    <div>
+        <h2>Bài 3</h2>
+        <div>
+            <input type="number" id="soBatki" placeholder="Nhập số bất kì">
+            <button type="button" onclick="tinhBai3()">Tính</button>
+        </div>
+        <p id="result3">Kiểm tra số</p>
+    </div>
+
+    <div>
+        <h2>Bài 4</h2>
+        <div>
+            <input type="number" id="nb1max" placeholder="Nhập số a">
+            <input type="number" id="nb2max" placeholder="Nhập số b">
+            <input type="number" id="nb3max" placeholder="Nhập số c">
+            <button type="button" onclick="tinhBai4()">Tính</button>
+        </div>
+        <p id="result4">Số lớn nhất</p>
+    </div>
+
+    <div>
+        <h2>Bài 5</h2>
+        <div>
+            <input type="number" id="Giuaky" placeholder="Điểm thi giữa kỳ">
+            <input type="number" id="Cuoiky" placeholder="Điểm thi cuối kỳ">
+            <button type="button" onclick="tinhBai5()">Xếp loại</button>
+        </div>
+        <p id="result5">Xếp học lực</p>
+    </div>
+
+    <div>
+        <h2>Bài 6</h2>
+        <div>
+            <input type="number" id="TienBan" placeholder="Nhập số tiền">
+            <button type="button" onclick="tinhBai6()">Tính</button>
+        </div>
+        <p id="result6">Số tiền Hoa Hồng</p>
+    </div>
+
+    <div>
+        <h2>Bài 7</h2>
+        <div>
+            <input type="number" id="TienDT" placeholder="Nhập số phút">
+            <button type="button" onclick="tinhBai7()">Tính</button>
+        </div>
+        <p id="result7"></p>  
+    </div>
+</body>
+</html>
+<script>
+    function tinhBai1(){
+        let a = parseInt(document.getElementById("soA").value);
+        let b = parseInt(document.getElementById("soB").value);
+        let kqBai;
+        if ( a !==0 && a % b===0){
+            kqBai= a + " chia hết cho " + b
+        }else{
+            kqBai= a + " ko chia hết cho " + b
+        }
+        if (b == 0){
+            kqBai= "số B không được = 0"
+        }
+        document.getElementById("result1").innerHTML=kqBai;
+    }
+    
+    function tinhBai2(){
+        let soTuoi= parseInt(document.getElementById("tuoi").value);
+        let dieukien = (soTuoi >= 15) ? "Đủ điều kiện vào lớp 10" : "Không đủ điều kiện vào lớp 10";
+        document.getElementById("result2").innerHTML = dieukien;
+    }
+
+    function tinhBai3(){
+        let soBK= parseInt(document.getElementById("soBatki").value);
+        let kq3;
+        if( soBK > 0){
+            kq3 = soBK +" lớn hơn 0"
+        }else if( soBK < 0){
+            kq3 = soBK +" bé hơn 0"
+        }else{
+            kq3= soBK
+        }
+        document.getElementById("result3").innerHTML= kq3;
+    }
+
+    function tinhBai4(){
+        let nb1 = parseInt(document.getElementById("nb1max").value);
+        let nb2 = parseInt(document.getElementById("nb2max").value);
+        let nb3 = parseInt(document.getElementById("nb3max").value);
+        let max = Math.max(nb1, nb2, nb3);
+        document.getElementById("result4").innerHTML= 'Số lớn nhất là '+ max;
+    }
+
+    function tinhBai5(){
+        let diemGiuaKy= parseFloat(document.getElementById("Giuaky").value);
+        let diemCuoiKy= parseFloat(document.getElementById("Cuoiky").value);
+        let diemTB= (diemGiuaKy + diemCuoiKy)/ 2;
+        if(diemTB >= 8.5){
+            document.getElementById("result5").innerHTML= diemTB + " điểm học lực GIỎI"
+        }else if(diemTB >= 6.5 && diemTB <8.5){
+            document.getElementById("result5").innerHTML=diemTB + "  điểm học lực KHÁ"
+        }else if(diemTB >=5 && diemTB <6.5){
+            document.getElementById("result5").innerHTML= diemTB +" điểm học lực TRUNG BÌNH"
+        }else{
+            document.getElementById("result5").innerHTML= diemTB +" điểm học lực YẾU"
+        }
+
+    }
+
+    function tinhBai6(){
+        let sotien= parseInt(document.getElementById("TienBan").value);
+        let tienHH = sotien >=10000000 ? sotien * 0.1 : sotien >=5000000 ? sotien * 0.05 : sotien *0.02;
+        document.getElementById("result6").innerHTML="Số tiền hoa hồng là " + tienHH;
+
+    }
+
+    function tinhBai7(){
+        let sophut= parseInt(document.getElementById("TienDT").value);
+        let tienDt= sophut >= 10 ? sophut * 1500 : sophut >= 5 ? sophut * 1200 : sophut * 1000;
+        document.getElementById("result7").innerHTML="Số tiền ĐT = " + tienDt;
+    }
+</script>
